@@ -11,5 +11,11 @@ namespace GradeBook.GradeBooks
         {
             Type = GradeBookType.Standard;
         }
+        public override char GetLetterGrade(double averageGrade)
+        {
+            if (Students.Count < 5)
+                throw new InvalidOperationException();
+            return 'F';
+        }
     }
 }
